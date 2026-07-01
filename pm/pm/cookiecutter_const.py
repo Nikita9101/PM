@@ -1,0 +1,8 @@
+# PREP {
+STUDENT_FULL_NAME_RUS = "Красильников Никита Александрович"
+PROJECT_NAME_RUS = "ПМ"
+PROJECT_DESCRIPTION =  "Гости в отеле"
+MAIN_BACKGROUND_COLOR = "#FFFFFF"
+AUX_BACKGROUND_COLOR = "#f1fe39"
+ATTENTION_COLOR = "#3964fe"
+# } PREP
