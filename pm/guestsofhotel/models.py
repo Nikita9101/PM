@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse_lazy
 
 
 class Guest(models.Model):
@@ -15,9 +16,18 @@ class Guest(models.Model):
         """
         Считает, сколько раз гость останавливался в отеле (аналог цикла из методички)
         """
-        # Находим все связанные с этим гостем записи из приложения history
+
         records = self.history_set.all()
         count = 0
         for record in records:
-            count += 1  # Вместо суммы денег просто считаем количество визитов
+            count += 1
         return count
+
+    def get_update_url(self):
+        return reverse_lazy("quest-update", kwargs={"pk": self.pk})
+
+    def get_history_url(self):
+        return reverse_lazy("quest-history", kwargs={"pk": self.pk})
+
+    class Meta:
+        ordering=["full_name"]

@@ -1,0 +1,26 @@
+{% extends 'general/base.html' %}
+{% load static %}
+
+{% block title %}
+История остановок гостя в отелях:{{object_list.first.quest}}
+{% endblock %}
+
+{% block h %}
+История остановок гостя в отелях:{{object_list.first.quest}}
+{% endblock %}
+
+{% block content %}
+<a class="btn attention mb-3" href="{% url 'home' %}">Назад</a>
+
+{% for object in object_list %}
+
+    {% include 'objects/one_column.html' %}
+
+{% endfor %}
+
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}
+
