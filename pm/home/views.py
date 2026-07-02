@@ -1,13 +1,9 @@
-from django.views.generic import TemplateView  # PREP
+from django.views.generic import ListView
+from history.models import History
 
-
-class HomeView(TemplateView):  # PREP
+class HomeView(ListView):
     """
-    PREP
-    Редактировать данный файл по необходимости.
-    При подготовке заготовки проекта надо
-    было вывести на экран какой-то шаблон.
-    Реальная задача может сильно отличаться.
+    Главная страница со списком истории заселений.
     """
-
-    template_name = "home/home.html"  # PREP
+    template_name = "home/home.html"
+    model = History  

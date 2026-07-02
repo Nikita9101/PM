@@ -10,3 +10,14 @@ class Guest(models.Model):
 
     def __str__(self):
         return self.full_name
+
+    def get_stay_count(self):
+        """
+        Считает, сколько раз гость останавливался в отеле (аналог цикла из методички)
+        """
+        # Находим все связанные с этим гостем записи из приложения history
+        records = self.history_set.all()
+        count = 0
+        for record in records:
+            count += 1  # Вместо суммы денег просто считаем количество визитов
+        return count
