@@ -11,6 +11,10 @@
 {% endblock %}
 
 {% block content %}
+<a href="{% url 'new-guest' %}" class="btn attention">Добавить гостя</a>
+{% if user.is_superuser %}
+    <a href="{{ object.get_update_url }}" class="stretched-link"></a>
+{% endif %}
     {% for object in object_list %}
 
         {% include 'objects/main.html' %}

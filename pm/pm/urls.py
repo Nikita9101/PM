@@ -23,13 +23,21 @@ from django.urls import path, include
 from django.conf import settings  # PREP
 from django.conf.urls.static import static  # PREP
 
+
+from guestsofhotel.views import GuestCreateView, GuestUpdateView
+from history.views import HistoryListView
+
 from home.views import HomeView
 
 urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls")),
-    
+
     path("", HomeView.as_view(), name="home"),
-    
+    path("guest/new/", GuestCreateView.as_view(), name="new-guest"),
+    path("admin/", admin.site.urls),
+    path("guest/new/", GuestCreateView.as_view(), name="new-guest"),
+    path("guest/<int:pk>/update/", GuestUpdateView.as_view(), name="guest-update"),
+    path("guest/<int:pk>/history", HistoryListView.as_view(), name="guest-history"),
     path("admin/", admin.site.urls),
 ]
 
