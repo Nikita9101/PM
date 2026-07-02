@@ -32,30 +32,28 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
     # PREP {
     "jquery",
     "django_bootstrap_icons",
-
     "home",
     "general",
     "accounts",
-    # } PREP
-
-    # STUD! {
-    "guests",
+# } PREP
+# STUD! {
+    "genders",
+    "statuses",
+    "hotels",
+    "roomtypes",
+    "guestsofhotel",
+    "rooms",
     "history",
-    # } STUD!
-
-    # PREP {
-    # Должно быть крайним в списке. См. https://pypi.org/project/django-cleanup/
-    "django_cleanup.apps.CleanupConfig",
-    # } PREP
+# } STUD!
 ]
 
 MIDDLEWARE = [
